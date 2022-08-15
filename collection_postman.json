@@ -1,0 +1,806 @@
+{
+	"info": {
+		"_postman_id": "ddb4a019-075b-4ed1-936b-6a82329d1374",
+		"name": "SoftExpert - Teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get product list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/product/list",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"product",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/product",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message:\": \"Lista de produtos encontrada\",\n    \"data\": [\n        {\n            \"id\": 0,\n            \"name\": \"\",\n            \"type\": \"\",\n            \"price\": 0.00,\n            \"tax\": 0.00\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product information",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/find/product",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"find",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/find/product",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"find",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Produto encontrado\",\n    \"data\": {\n        \"name\": \"\",\n        \"type\": \"\",\n        \"price\": 0.00,\n        \"tax\": 0.00\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register a product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Papel Higiênico\",\r\n    \"type\": 1,\r\n    \"price\": 10.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/product",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"type\": \"\",\r\n    \"price\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/product",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Produto cadastrado\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit product information",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Sabonete\",\r\n    \"type\": 1,\r\n    \"price\": 0.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/product",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"\",\r\n    \"name\": \"\",\r\n    \"type\": \"\",\r\n    \"price\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/product",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Produto alterado\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/product",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/product",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Produtos deletado\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Type",
+			"item": [
+				{
+					"name": "Get product types list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/type/list",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"type",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost/type",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"type"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Tipo encontrado\",\n    \"data\": [\n        {\n            \"id\": 0,\n            \"name\": \"\",\n            \"tax\": 0.00\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product type information",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/find/type",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"find",
+								"type"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/type",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"type"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Tipo encontrado\",\n    \"data\": \n    {\n        \"id\": 0,\n        \"name\": \"\",\n        \"tax\": 0.00\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register a product type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Higiene\",\r\n    \"tax\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/type",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"type"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"tax\": 0.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/type",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"type"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Tipo cadastrado\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit product type information",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Higiene\",\r\n    \"tax\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/type",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"type"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\": \"\",\r\n        \"name\": \"\",\r\n        \"tax\": 0.00\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/type",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"type"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Tipo alterado\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a product type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/type",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"type"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/type",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"type"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Tipo deletado\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get order list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/order/list",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"order",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/order/list",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"order",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Lista de pedidos encontrada\",\n    \"data\": [\n        {\n            \"id\": 0,\n            \"amount\": 0,\n            \"totalTax\": 0.00,\n            \"totalPrice\": 0.00,\n            \"timestamp\": 1234567890\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get order information",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/find/order",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"find",
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost//find/order",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"",
+										"find",
+										"order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Pedido encontrado\",\n    \"data\": {\n        \"amount\": 0,\n        \"totalTax\": 0.00,\n        \"totalPrice\": 0.00,\n        \"created\": 1234567890,\n        \"products\": [\n            {\n                \"name\": \"\",\n                \"type\": \"\",\n                \"amount\": 0,\n                \"tax\": 0.00,\n                \"price\": 0.00,\n                \"totalTax\": 0.00,\n                \"totalPrice\": 0.00\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register a order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Papel\",\r\n            \"type\": \"Higiene\",\r\n            \"price\": \"100.00\",\r\n            \"tax\": 1,\r\n            \"amount\": 1,\r\n            \"total_price\": 100,\r\n            \"total_tax\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/order",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"products\": \r\n    [\r\n        {\r\n            \"id\": \"\",\r\n            \"amount\": 0\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/order",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n    \"status\": 201,\r\n    \"message\": \"Pedido cadastrado\",\r\n    \"data\": []\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/order",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete a order",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/order",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Pedido deletado\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

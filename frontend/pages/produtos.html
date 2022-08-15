@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mercadinho | SoftExpert - Teste</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+
+    <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+    <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+  </head>
+  <body class="hold-transition sidebar-collapse layout-top-nav">
+    <div class="wrapper">
+      <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+        <div class="container">
+          <a href="../index.html" class="navbar-brand">
+            <img src="../dist/img/logo.png" alt="logo" class="brand-image" style="opacity: .8">
+            <span class="brand-text ">Mercadinho</span>
+          </a>
+        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="../index.html" class="nav-link">Ponto de Venda</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a id="dropdownCadastros" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Cadastro</a>
+              <ul aria-labelledby="dropdownCadastros" class="dropdown-menu border-0 shadow">
+                <li><a href="../pages/produtos.html" class="dropdown-item">Produtos</a></li>
+                <li><a href="../pages/tipos.html" class="dropdown-item">Tipos de produto</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a id="dropdownRelatorio" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Relatório</a>
+              <ul aria-labelledby="dropdownRelatorio" class="dropdown-menu border-0 shadow">
+                <li><a href="../pages/pedidos.html" class="dropdown-item">Pedidos</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="content-wrapper">
+        <div class="content-header">
+          <div class="container">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Produtos</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item">Cadastro</li>
+                  <li class="breadcrumb-item active">Produtos</li>
+                </ol>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header row align-items-center">
+                  <div class="col-4"><h3>Lista de produtos</h3></div>
+                  <div class="col-4 offset-4"><button type="button" id="new_product_btn" class="btn btn-block btn-success btn-lg">Novo Produto</button></div>
+                </div>
+                <div class="card-body">
+                  <table id="product_list" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                        <th>Imposto</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                    <tfoot>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Preço</th>
+                        <th>Imposto</th>
+                        <th>Ações</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="new_product_modal">
+      <div class="modal-dialog new_product_modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Cadastrar Produto</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="new_product_name">Nome do produto</label>
+                <input type="text" class="form-control" id="new_product_name" placeholder="Nome do produto">
+              </div>
+              <div class="form-group">
+                <label for="new_product_price">Preço do produto</label>
+                <input type="text" class="form-control" id="new_product_price" placeholder="Preço do produto">
+              </div>
+              <div class="form-group">
+                <label for="new_product_type">Preço do produto</label>
+                <select class="form-control select2bs4" id="new_product_type" placeholder="Tipo de produto" style="width: 100%;"></select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="new_product_modal_cancel">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="new_product_modal_save">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="edit_product_modal">
+      <div class="modal-dialog edit_product_modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Alterar Produto</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="new_product_name">Nome do produto</label>
+                <input type="text" class="form-control" id="edit_product_name" placeholder="Nome do produto">
+              </div>
+              <div class="form-group">
+                <label for="new_product_price">Preço do produto</label>
+                <input type="text" class="form-control" id="edit_product_price" placeholder="Preço do produto">
+              </div>
+              <div class="form-group">
+                <label for="new_product_price">Tipo do produto</label>
+                <select class="form-control select2bs4" id="edit_product_type" placeholder="Tipo de produto" style="width: 100%;"></select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="edit_product_modal_cancel">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="edit_product_modal_save">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../dist/js/adminlte.min.js"></script>
+    <script src="../dist/js/pages/produtos.js"></script>
+
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../plugins/jszip/jszip.min.js"></script>
+    <script src="../plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <script src="../plugins/select2/js/select2.full.min.js"></script>
+
+    <script src="../plugins/moment/moment.min.js"></script>
+    <script src="../plugins/inputmask/jquery.inputmask.min.js"></script>
+  </body>
+</html>

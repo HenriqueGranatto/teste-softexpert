@@ -27,7 +27,7 @@ bash stack-deploy.sh
 
 ### Live server
 - Uma versão de teste do sistema se encontra disponível no seguinte link (se você está lendo isso a mais de uma semana da criação do repositório esse servidor não está mais disponível)
-- ec2-15-228-254-161.sa-east-1.compute.amazonaws.com
+- [ec2-15-228-254-161.sa-east-1.compute.amazonaws.com](https://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/)
 
 ### Entregáveis
 - Além do código, consta no repositório a collection do Postman para o backend e uma mini modelagem do banco de dados.

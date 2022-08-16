@@ -9,7 +9,7 @@ $("document").ready(() => {
 const getProductList = async () =>
 {
     const request = { method: 'GET'}
-    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/product/list", request)).json()
+    return await (await fetch("http://localhost/product/list", request)).json()
 }
 
 const listProductsOptions = async () =>
@@ -138,13 +138,13 @@ const updateProductListFooter = () =>
 const getProductInfo = async (id) =>
 {
     const request = { method: 'POST', body: JSON.stringify({id: id})}
-    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/find/product", request)).json()
+    return await (await fetch("http://localhost/find/product", request)).json()
 }
 
 const saveOrder = async () =>
 {
     const request = { method: 'POST', body: JSON.stringify({products: productList})}
-    const response = await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/order", request)).json()
+    const response = await (await fetch("http://localhost/order", request)).json()
 
     if(response.status == 201)
     {

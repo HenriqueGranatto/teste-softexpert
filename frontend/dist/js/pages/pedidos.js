@@ -48,11 +48,11 @@ const openOrderProductList = async (orderID) =>
 const getOrderList = async () =>
 {
     const request = { method: 'GET'}
-    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/order/list", request)).json()
+    return await (await fetch("http://localhost/order/list", request)).json()
 }
 
 const getOrderInfo = async (id) =>
 {
     const request = { method: 'POST', body: JSON.stringify({id: id})}
-    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/find/order", request)).json()
+    return await (await fetch("http://localhost/find/order", request)).json()
 }

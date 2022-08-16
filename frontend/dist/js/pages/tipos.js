@@ -58,7 +58,7 @@ const saveNewtype = async () =>
         })
     }
 
-    const response =  await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/type", request)).json()
+    const response =  await (await fetch("http://localhost/type", request)).json()
 
     if(response.status == 201)
     {
@@ -98,7 +98,7 @@ const editNewtype = async () =>
         })
     }
 
-    const response = await(await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/type", request)).json()
+    const response = await(await fetch("http://localhost/type", request)).json()
 
     if(response.status == 200)
     {
@@ -132,7 +132,7 @@ const deleteType = async (type) =>
                 body: JSON.stringify({"id": type})
             }
         
-            const response =  await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/type", request)).json()
+            const response =  await (await fetch("http://localhost/type", request)).json()
 
             if(response.status == 200)
             {
@@ -146,11 +146,11 @@ const deleteType = async (type) =>
 const getTypeList = async () =>
 {
     const request = { method: 'GET'}
-    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/type/list", request)).json()
+    return await (await fetch("http://localhost/type/list", request)).json()
 }
 
 const getTypeInfo = async (id) =>
 {
     const request = { method: 'POST', body: JSON.stringify({id: id})}
-    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/find/type", request)).json()
+    return await (await fetch("http://localhost/find/type", request)).json()
 }

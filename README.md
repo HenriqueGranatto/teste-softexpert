@@ -14,13 +14,13 @@ O arquivo com a descrição completa do teste encontra-se no repositório, mas d
 ### Instalação
 1. Caso você já tenha o git e o Docker instalado, rode o seguinte comando:
 ```
-https://github.com/HenriqueGranatto/teste-softexpert.git
+git clone https://github.com/HenriqueGranatto/teste-softexpert.git
 cd teste-softexpert/docker
 docker-compose up
 ```
 2. Caso você já tenha o git e está instalando no Ubuntu
 ```
-https://github.com/HenriqueGranatto/teste-softexpert.git
+git clone https://github.com/HenriqueGranatto/teste-softexpert.git
 cd teste-softexpert
 bash stack-deploy.sh
 ```

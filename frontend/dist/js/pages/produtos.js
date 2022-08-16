@@ -80,7 +80,7 @@ const saveNewProduct = async () =>
         })
     }
 
-    const response =  await (await fetch("http://localhost/product", request)).json()
+    const response =  await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/product", request)).json()
 
     if(response.status == 201)
     {
@@ -134,7 +134,7 @@ const editNewProduct = async () =>
         })
     }
 
-    const response = await(await fetch("http://localhost/product", request)).json()
+    const response = await(await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/product", request)).json()
 
     if(response.status == 200)
     {
@@ -168,7 +168,7 @@ const deleteProduct = async (product) =>
                 body: JSON.stringify({"id": product})
             }
         
-            const response =  await (await fetch("http://localhost/product", request)).json()
+            const response =  await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/product", request)).json()
 
             if(response.status == 200)
             {
@@ -182,17 +182,17 @@ const deleteProduct = async (product) =>
 const getProductList = async () =>
 {
     const request = { method: 'GET'}
-    return await (await fetch("http://localhost/product/list", request)).json()
+    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/product/list", request)).json()
 }
 
 const getProductInfo = async (id) =>
 {
     const request = { method: 'POST', body: JSON.stringify({id: id})}
-    return await (await fetch("http://localhost/find/product", request)).json()
+    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/find/product", request)).json()
 }
 
 const getTypeList = async () =>
 {
     const request = { method: 'GET'}
-    return await (await fetch("http://localhost/type/list", request)).json()
+    return await (await fetch("http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/type/list", request)).json()
 }

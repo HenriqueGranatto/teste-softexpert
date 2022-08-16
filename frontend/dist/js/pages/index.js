@@ -102,11 +102,18 @@ const decreaseProductToList = (productID) =>
 {
     productIndexOnList = productList.findIndex((product) => product.id == productID)
 
-    if(productIndexOnList > 0)
+    if(productIndexOnList >= 0)
     {
-        productList[productIndexOnList].amount -= 1
-        productList[productIndexOnList].total_price = Number(productList[productIndexOnList].price * productList[productIndexOnList].amount).toFixed(2)
-        productList[productIndexOnList].total_tax = Number(productList[productIndexOnList].tax * productList[productIndexOnList].amount).toFixed(2)
+        if(productList[productIndexOnList].amount == 1)
+        {
+            productList.splice(productIndexOnList, 1)
+        }
+        else
+        {
+            productList[productIndexOnList].amount -= 1
+            productList[productIndexOnList].total_price = Number(productList[productIndexOnList].price * productList[productIndexOnList].amount).toFixed(2)
+            productList[productIndexOnList].total_tax = Number(productList[productIndexOnList].tax * productList[productIndexOnList].amount).toFixed(2)
+        }
     }
 
     updateProductListFooter()

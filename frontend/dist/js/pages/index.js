@@ -76,9 +76,9 @@ const increaseProductToList = async (productID) =>
         if(productInfo.status == 200)
         {
             productInfo.data[0]["amount"] = 1
-            productInfo.data[0]["tax"] = productInfo.data[0].price * (productInfo.data[0].tax / 100)
-            productInfo.data[0]["total_price"] = productInfo.data[0].price * productInfo.data[0].amount
-            productInfo.data[0]["total_tax"] = productInfo.data[0].tax * productInfo.data[0].amount
+            productInfo.data[0]["tax"] = Number(productInfo.data[0].price * (productInfo.data[0].tax / 100)).toFixed(2)
+            productInfo.data[0]["total_price"] = Number(productInfo.data[0].price * productInfo.data[0].amount).toFixed(2)
+            productInfo.data[0]["total_tax"] = Number(productInfo.data[0].tax * productInfo.data[0].amount).toFixed(2)
 
             productList.push(productInfo.data[0])
         }
@@ -90,17 +90,27 @@ const increaseProductToList = async (productID) =>
     else
     {
         productList[productIndexOnList].amount += 1
-        productList[productIndexOnList].total_price = productList[productIndexOnList].price * productList[productIndexOnList].amount
-        productList[productIndexOnList].total_tax = productList[productIndexOnList].tax * productList[productIndexOnList].amount
+        productList[productIndexOnList].total_price = Number(productList[productIndexOnList].price * productList[productIndexOnList].amount).toFixed(2)
+        productList[productIndexOnList].total_tax = Number(productList[productIndexOnList].tax * productList[productIndexOnList].amount).toFixed(2)
     }
 
     updateProductListFooter()
     listProductsList()
 }
 
-const decreaseProductToList = (product) =>
+const decreaseProductToList = (productID) =>
 {
+    productIndexOnList = productList.findIndex((product) => product.id == productID)
 
+    if(productIndexOnList > 0)
+    {
+        productList[productIndexOnList].amount -= 1
+        productList[productIndexOnList].total_price = Number(productList[productIndexOnList].price * productList[productIndexOnList].amount).toFixed(2)
+        productList[productIndexOnList].total_tax = Number(productList[productIndexOnList].tax * productList[productIndexOnList].amount).toFixed(2)
+    }
+
+    updateProductListFooter()
+    listProductsList()
 }
 
 const updateProductListFooter = () =>

@@ -30,4 +30,4 @@ bash stack-deploy.sh
 - http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/
 
 ### Entregáveis
-- Além do código, consta no repositório a collection do Postman para o backend e uma mini modelagem do banco de dados.
+- Além do código, consta no repositório a collection do Postman para o backend e uma mini modelagem do banco de dados. O dump do banco de dados se encontra em `/postgres/market.dump`

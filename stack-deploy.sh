@@ -30,4 +30,4 @@ docker rmi -f $(docker images -q)
 echo "------------------------------"
 echo "-- Incializando os serviços --"
 echo "------------------------------"
-docker-compose -f docker/docker-compose.sandbox.yaml up
+docker-compose -f docker/docker-compose.yaml up

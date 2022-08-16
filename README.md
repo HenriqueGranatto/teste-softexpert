@@ -14,19 +14,20 @@ O arquivo com a descrição completa do teste encontra-se no repositório, mas d
 ### Instalação
 1. Caso você já tenha o git e o Docker instalado, rode o seguinte comando:
 ```
-https://github.com/HenriqueGranatto/teste-softexpert.git
+git clone https://github.com/HenriqueGranatto/teste-softexpert.git
 cd teste-softexpert/docker
 docker-compose up
 ```
 2. Caso você já tenha o git e está instalando no Ubuntu
 ```
-https://github.com/HenriqueGranatto/teste-softexpert.git
+git clone https://github.com/HenriqueGranatto/teste-softexpert.git
 cd teste-softexpert
 bash stack-deploy.sh
 ```
 
 ### Live server
-- Uma versão de teste do sistema se encontra disponível no seguinte link (se você está lendo isso a mais de uma semana da criação do repositório esse servidor não está mais disponível):
+- Uma versão de teste do sistema se encontra disponível no seguinte link (se você está lendo isso a mais de uma semana da criação do repositório esse servidor não está mais disponível)
+- http://ec2-15-228-254-161.sa-east-1.compute.amazonaws.com/
 
 ### Entregáveis
 - Além do código, consta no repositório a collection do Postman para o backend e uma mini modelagem do banco de dados.
